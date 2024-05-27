@@ -10,7 +10,7 @@
 
     <!-- Proprietary Blobs -->
     <project name="MaxineToTheStars/op-snowcone-proprietary_vendor_oneplus_dre"
-        path="vendor/oneplus" remote="github" />
+        path="vendor/oneplus/dre" remote="github" />
 
     <!-- Common Tree(?) -->
     <project name="MaxineToTheStars/op-snowcone-android_hardware_oneplus" path="hardware/oneplus"

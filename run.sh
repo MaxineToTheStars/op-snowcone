@@ -86,7 +86,8 @@ function _build_run() {
     cd $CONST_ROOT_DIRECTORY
 
     # Copy the XML file to the work directory
-    cp ./resources/microg_fdroid.xml ./work/custom-manifests/microg_fdroid.xml
+    cp ./resources/dre.xml ./work/custom-manifests/dre.xml
+    cp ./resources/microg.xml ./work/custom-manifests/microg.xml
 
     # Run
     docker run \
