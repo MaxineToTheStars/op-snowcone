@@ -94,7 +94,7 @@ function _build_run() {
     -e "BUILD_TYPE=user" \
     -e "DEVICE_LIST=${CONFIG_BUILD_DEVICE_NAME}" \
     -e "INCLUDE_PROPRIETARY=false" \
-    -e "RELEASE_TYPE=OFFICIAL" \
+    -e "RELEASE_TYPE=OP-SNOWCONE" \
     -e "SIGN_BUILDS=true" \
     -e "WITH_GMS=true" \
     -v "${CONST_ROOT_DIRECTORY}/work/build-keys:/srv/keys" \
