@@ -53,7 +53,7 @@ function _build_download_dependencies() {
     sudo apt-get update && sudo apt-get upgrade --with-new-pkgs
 
     # Install needed dependencies
-    sudo apt-get install bash curl docker git nano openssl repo unzip
+    sudo apt-get install bash curl git nano openssl repo unzip
 
     # Pull docker image
     docker pull $CONST_LINEAGE_CICD_DOCKER_IMAGE
@@ -86,18 +86,19 @@ function _build_run() {
     cd $CONST_ROOT_DIRECTORY
 
     # Copy the XML file to the work directory
-    cp ./resources/dre.xml ./work/custom-manifests/dre.xml
-    cp ./resources/microg.xml ./work/custom-manifests/microg.xml
+    cp --recursive --update --verbose ./resources/dre.xml ./work/custom-manifests/dre.xml
+    cp --recursive --update --verbose ./resources/microg.xml ./work/custom-manifests/microg.xml
 
     # Run
     docker run \
     -e "BRANCH_NAME=${CONFIG_BUILD_LINEAGE_BRANCH_NAME}" \
-    -e "BUILD_TYPE=user" \
+    -e "BUILD_TYPE=userdebug" \
     -e "DEVICE_LIST=${CONFIG_BUILD_DEVICE_NAME}" \
     -e "INCLUDE_PROPRIETARY=false" \
     -e "RELEASE_TYPE=OP-SNOWCONE" \
     -e "SIGN_BUILDS=true" \
     -e "WITH_GMS=true" \
+    -e "ZIP_UP_IMAGES=true" \
     -v "${CONST_ROOT_DIRECTORY}/work/build-keys:/srv/keys" \
     -v "${CONST_ROOT_DIRECTORY}/work/build-logs:/srv/logs" \
     -v "${CONST_ROOT_DIRECTORY}/work/build-zips:/srv/zips" \

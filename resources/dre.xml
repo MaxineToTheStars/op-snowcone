@@ -15,8 +15,4 @@
     <!-- Common Tree(?) -->
     <project name="MaxineToTheStars/op-snowcone-android_hardware_oneplus" path="hardware/oneplus"
         remote="github" />
-
-    <!-- Qualcomm Common
-    <project name="MaxineToTheStars/op-snowcone-android_device_qcom_common"
-        path="device/qcom/common" remote="github" /> -->
 </manifest>
